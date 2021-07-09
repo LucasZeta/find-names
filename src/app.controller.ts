@@ -22,7 +22,7 @@ export class AppController {
 
     return {
       query: name,
-      results: this.findNamesService.searchNames(possibleNames)
+      results: this.findNamesService.searchNames(possibleNames),
     };
   }
 }

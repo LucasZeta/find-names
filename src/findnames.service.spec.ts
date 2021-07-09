@@ -17,17 +17,21 @@ describe('FindNamesService', () => {
 
   describe('searchNames', () => {
     it('should return information stored in local database', () => {
-      expect(findNamesService.searchNames(['ANA'])).toStrictEqual([{
-        name: 'ANA',
-        count: 3089858,
-      }]);
+      expect(findNamesService.searchNames(['ANA'])).toStrictEqual([
+        {
+          name: 'ANA',
+          count: 3089858,
+        },
+      ]);
     });
 
     it('should filter out information not contained in local database', () => {
-      expect(findNamesService.searchNames(['ANA', 'A121NA'])).toStrictEqual([{
-        name: 'ANA',
-        count: 3089858,
-      }]);
+      expect(findNamesService.searchNames(['ANA', 'A121NA'])).toStrictEqual([
+        {
+          name: 'ANA',
+          count: 3089858,
+        },
+      ]);
     });
 
     it('should return empty array when search parameters are not contained in local database', () => {
