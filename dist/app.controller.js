@@ -28,7 +28,7 @@ let AppController = class AppController {
         const possibleNames = this.appService.getPossibleNames(name);
         return {
             query: name,
-            results: this.findNamesService.searchNames(possibleNames)
+            results: this.findNamesService.searchNames(possibleNames),
         };
     }
 };
