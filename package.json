@@ -2,7 +2,14 @@
   "name": "find-names",
   "version": "0.0.1",
   "description": "An application to find existing Brazilian names given a set of letters",
-  "author": "",
+  "author": {
+    "name": "Lucas Conceição",
+    "email": "lucasdsdc@gmail.com"
+  },
+  "contributors": [{
+    "name": "Experiência de Compra Individualização",
+    "email": "natura-squad-sell-in@thoughtworks.com"
+  }],
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
