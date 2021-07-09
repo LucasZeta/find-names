@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 import { FindNamesService } from './findnames.service';
 
@@ -10,8 +10,9 @@ export class AppController {
   ) {}
 
   @Get()
+  @Render('index')
   getHello() {
-    return this.appService.getHello();
+    return {};
   }
 
   @Get(':name')
