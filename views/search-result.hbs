@@ -11,6 +11,8 @@
     <ul>
       {{#each results}}
         <li>There are {{ this.count }} occurrencies of the name {{ this.name }}</li>
+      {{else}}
+        <li>There are no occurrencies for the searched term.</li>
       {{/each}}
     </ul>
 
