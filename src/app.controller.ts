@@ -16,8 +16,13 @@ export class AppController {
   }
 
   @Get(':name')
+  @Render('search-result')
   getNames(@Param('name') name: string) {
     const possibleNames = this.appService.getPossibleNames(name);
-    return this.findNamesService.searchNames(possibleNames);
+
+    return {
+      query: name,
+      results: this.findNamesService.searchNames(possibleNames)
+    };
   }
 }
