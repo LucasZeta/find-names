@@ -5,9 +5,18 @@ import { SearchResult } from './interfaces/SearchResult';
 @Injectable()
 export class FindNamesService {
   searchNames(names: string[]): SearchResult[] {
-    return BRAZILIAN_NAMES.filter((result) => {
-      return names.indexOf(result.name) >= 0;
-    }).sort((firstResult, secondResult) => {
+    const matches: SearchResult[] = [];
+
+    names.forEach((name) => {
+      if (BRAZILIAN_NAMES[name]) {
+        matches.push({
+          name,
+          count: BRAZILIAN_NAMES[name]
+        });
+      }
+    });
+
+    return matches.sort((firstResult, secondResult) => {
       return secondResult.count - firstResult.count;
     });
   }
