@@ -5,14 +5,8 @@ import { SearchResult } from './interfaces/SearchResult';
 @Injectable()
 export class FindNamesService {
   searchNames(names: string[]): SearchResult[] {
-    const resultList: SearchResult[] = [];
-
-    names.forEach((name) => {
-      const match = BRAZILIAN_NAMES.find((result) => result.name == name);
-
-      if (match) {
-        resultList.push(match);
-      }
+    const resultList: SearchResult[] = BRAZILIAN_NAMES.filter((result) => {
+      return names.indexOf(result.name) >= 0
     });
 
     return resultList;
